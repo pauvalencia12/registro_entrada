@@ -1,12 +1,36 @@
 import tkinter as tk  
 
 
+
+
+
+
+
+
 def registrar_salidas(): 
 
     nombre=""
     documento="" 
     hora_salida="" 
-    observaciones=""
+    observaciones="" 
+
+    def registro(): 
+        nombre=etnombre.get() 
+        documento=etdocumento.get() 
+        hora_salida=ethora.get() 
+        observaciones=etobservaciones.get("1.0","end") 
+        etnombre.delete(0,"end")
+        etdocumento.delete(0,"end")
+        ethora.delete(0,"end")
+        etobservaciones.delete("1.0","end")
+
+        f=open("salidas.txt","a") 
+        f.write(nombre+"\n") 
+        f.write(documento+"\n") 
+        f.write(hora_salida+"\n") 
+        f.write(observaciones+"\n") 
+        f.close()
+
 
     root=tk.Tk() 
     root.title("Registrar Salidas") 
@@ -40,8 +64,8 @@ def registrar_salidas():
     etobservaciones=tk.Text(ventana,height=10,width=20) 
     etobservaciones.place(x=20,y=210) 
 
-    btnregistrar=tk.Button(ventana,text="Registar Salida") 
-    btnregistrar.place(x=200,y=330)
+    btnregistrar=tk.Button(ventana,text="Registar Salida",command=registro) 
+    btnregistrar.place(x=90,y=330)
 
 
     
