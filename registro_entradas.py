@@ -7,6 +7,23 @@ def registrar_entradas():
     hora=""
     observaciones=""
 
+    def registro(): 
+        nombre=etnombre.get() 
+        documento=etdocumento.get() 
+        hora=ethora.get() 
+        observaciones=etobservaciones.get("1.0","end") 
+        etnombre.delete(0,"end")
+        etdocumento.delete(0,"end")
+        ethora.delete(0,"end")
+        etobservaciones.delete("1.0","end")
+
+        f=open("entradas.txt","a") 
+        f.write(nombre+"\n") 
+        f.write(documento+"\n") 
+        f.write(hora+"\n") 
+        f.write(observaciones+"\n") 
+        f.close()
+
     root=tk.Tk() 
     root.title("Registrar Entradas") 
     ventana=tk.Frame(root) 
@@ -37,7 +54,7 @@ def registrar_entradas():
     etobservaciones=tk.Text(ventana,height=10,width=20)
     etobservaciones.place(x=20,y=210)
 
-    btnregistrar=tk.Button(ventana,text="registrar entrada")
+    btnregistrar=tk.Button(ventana,text="registrar entrada",command=registro)
     btnregistrar.place(x=200,y=330)
 
 
