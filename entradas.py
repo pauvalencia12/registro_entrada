@@ -1,17 +1,16 @@
 import  tkinter as tk  
 from registro_entradas import registrar_entradas
+from registro_salidas import registrar_salidas
 
 
 
-def registrar_salidas(): 
-    print("prueba 2")
 def eventos(event): 
     boton_presionado=event.widget.cget("text") 
     if(boton_presionado=="Registrar Entradas"):  
         registrar_entradas()
         
     elif (boton_presionado=="Registrar Salidas"): 
-        print("cosa aqui")
+        registrar_salidas()
 
 
 
