@@ -41,7 +41,7 @@ def registrar_salidas():
     etobservaciones.place(x=20,y=210) 
 
     btnregistrar=tk.Button(ventana,text="Registar Salida") 
-    btnregistrar.place(x=20,y=330)
+    btnregistrar.place(x=200,y=330)
 
 
     

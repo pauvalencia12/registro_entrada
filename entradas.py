@@ -17,7 +17,7 @@ def eventos(event):
 #ventana principal  
 
 root=tk.Tk()
-root.title("Calculadora Sistemas Numericos")
+root.title("Registros anfiteatro")
 ventana=tk.Frame(root) 
 ventana.config(width=300,height=200,bg="gray") 
 
